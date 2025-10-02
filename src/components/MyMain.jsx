@@ -28,12 +28,16 @@ export default function MyMain() {
     useEffect(() => {
         fetchActresses()
         fetchActors()
+
     }, [])
+
+    const fusionList = [...actors, ...actresses]
+    console.log(fusionList);
 
 
     return (
         <>
-            <div className="container">
+            {/* <div className="container">
                 {actresses.map(actress => (
                     <div key={actress.id} className="card woman">
                         <MyActress
@@ -43,10 +47,19 @@ export default function MyMain() {
                 ))}
             </div>
             <div className="container">
-                {actors.map(actress => (
-                    <div key={actress.id} className="card man">
+                {actors.map(actor => (
+                    <div key={actor.id} className="card man">
                         <MyActress
-                            actress={actress}
+                            actress={actor}
+                        />
+                    </div>
+                ))}
+            </div> */}
+            <div className="container">
+                {fusionList.map(person => (
+                    <div key={person.id} className="card">
+                        <MyActress
+                            actress={person}
                         />
                     </div>
                 ))}
