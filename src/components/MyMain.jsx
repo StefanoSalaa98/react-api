@@ -3,14 +3,13 @@ import { useState, useEffect } from "react";
 
 export default function MyMain() {
 
-    const [actress, setActress] = useState([]);
+    const [actresses, setActresses] = useState([]);
 
 
-    function fetchActress() {
+    function fetchActresses() {
         axios.get("https://lanciweb.github.io/demo/api/actresses/")
             .then((res) =>
-                // setActress(res.data.results))
-                console.log(res.data))
+                setActresses(res.data))
             .catch(error => console.log(error)
             )
     }
@@ -18,13 +17,22 @@ export default function MyMain() {
     //useEffect senza dipendenze viene richiamato solo la prima volta al caricamento della pagina
 
     useEffect(() => {
-        fetchActress()
-
+        fetchActresses()
     }, [])
 
-    // console.log(actress)
 
     return (
-        <h1>Ciao a tutti</h1>
+        actresses.map(actress => (
+            <div key={actress.id}>
+                <h2>{actress.name}</h2>
+                <p>{actress.birth_year}</p>
+                <p>{actress.nationality}</p>
+                <p>{actress.biography}</p>
+                <p>{actress.awards}</p>
+                <div>
+                    <img src={actress.image} alt={actress.name} />
+                </div>
+            </div>
+        ))
     )
 }
