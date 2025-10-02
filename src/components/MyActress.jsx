@@ -22,9 +22,9 @@ const MyActress = (props) => {
             <span><strong>BIOGRAPHY: </strong>{actress.biography}</span>
             <span><strong>AWARDS: </strong>{actress.awards}</span>
             {/* se è presente il campo most_famous_movies stampo la lista dei loro film famosi */}
-            {actress.most_famous_movies && <span><strong>MOST FAMOUS FILMS:</strong>{famousFilms(actress.most_famous_movies)}</span>}
+            {actress.most_famous_movies && <div><strong>MOST FAMOUS FILMS:</strong>{famousFilms(actress.most_famous_movies)}</div>}
             {/* se è presente il campo known_for stampo la lista dei loro film famosi */}
-            {actress.known_for && <span><strong>MOST FAMOUS FILMS:</strong>{famousFilms(actress.known_for)}</span>}
+            {actress.known_for && <div><strong>MOST FAMOUS FILMS:</strong>{famousFilms(actress.known_for)}</div>}
             <div className="image">
                 <img src={actress.image} alt={actress.name} />
             </div>

@@ -29,6 +29,16 @@
     margin: 10px 5px;
   }
 
+  ul {
+    /* width: 30%;
+    margin: 0 auto */
+    padding-left: 220px;
+  }
+
+  li {
+    text-align: left;
+  }
+
   strong {
     color: red;
   }
