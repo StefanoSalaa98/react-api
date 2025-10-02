@@ -2,6 +2,7 @@ const MyActress = (props) => {
 
     const { actress } = props
 
+    // funzione che riceve l'array con i film più famosi e ne stampa la lista
     function famousFilms(films) {
         return (
             <ul>

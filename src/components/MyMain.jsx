@@ -8,7 +8,7 @@ export default function MyMain() {
     //variabile di stato per gli attori
     const [actors, setActors] = useState([]);
 
-
+    // funzione che prende i dati delle attrici dall'API
     function fetchActresses() {
         axios.get("https://lanciweb.github.io/demo/api/actresses/")
             .then((res) =>
@@ -17,6 +17,7 @@ export default function MyMain() {
             )
     }
 
+    // funzione che prende i dati degli attori dall'API
     function fetchActors() {
         axios.get("https://lanciweb.github.io/demo/api/actors/")
             .then((res) => setActors(res.data))
@@ -24,7 +25,6 @@ export default function MyMain() {
     }
 
     //useEffect senza dipendenze viene richiamato solo la prima volta al caricamento della pagina
-
     useEffect(() => {
         fetchActresses()
         fetchActors()
@@ -36,6 +36,7 @@ export default function MyMain() {
 
     return (
         <>
+            {/* scorrso l'array actress e stampo le card attrici */}
             <div className="container">
                 {actresses.map(actress => (
                     <div key={actress.id} className="card woman">
@@ -45,6 +46,7 @@ export default function MyMain() {
                     </div>
                 ))}
             </div>
+            {/* scorrso l'array actors e stampo le card attori */}
             <div className="container">
                 {actors.map(actor => (
                     <div key={actor.id} className="card man">
