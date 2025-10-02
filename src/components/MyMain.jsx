@@ -31,13 +31,12 @@ export default function MyMain() {
 
     }, [])
 
+    //unisco le liste degli attori e delle attrici
     const fusionList = [...actors, ...actresses]
-    console.log(fusionList);
-
 
     return (
         <>
-            {/* <div className="container">
+            <div className="container">
                 {actresses.map(actress => (
                     <div key={actress.id} className="card woman">
                         <MyActress
@@ -54,8 +53,8 @@ export default function MyMain() {
                         />
                     </div>
                 ))}
-            </div> */}
-            <div className="container">
+            </div>
+            {/* <div className="container">
                 {fusionList.map(person => (
                     <div key={person.id} className="card">
                         <MyActress
@@ -63,7 +62,7 @@ export default function MyMain() {
                         />
                     </div>
                 ))}
-            </div>
+            </div> */}
         </>
     )
 }
