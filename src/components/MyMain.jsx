@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import MyActress from "./MyActress";
 
 export default function MyMain() {
 
@@ -22,17 +22,14 @@ export default function MyMain() {
 
 
     return (
-        actresses.map(actress => (
-            <div key={actress.id}>
-                <h2>{actress.name}</h2>
-                <p>{actress.birth_year}</p>
-                <p>{actress.nationality}</p>
-                <p>{actress.biography}</p>
-                <p>{actress.awards}</p>
-                <div>
-                    <img src={actress.image} alt={actress.name} />
+        <div className="container">
+            {actresses.map(actress => (
+                <div key={actress.id} className="card">
+                    <MyActress
+                        actress={actress}
+                    />
                 </div>
-            </div>
-        ))
+            ))}
+        </div>
     )
 }
