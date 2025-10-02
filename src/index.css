@@ -19,9 +19,16 @@
   margin: 0 auto;
 }
 
+.woman {
+  background-color: pink;
+}
+
+.man {
+  background-color: lightblue;
+}
+
 .card {
   width: calc((100% - 30px) / 2);
-  background-color: pink;
 
   span {
     display: block;
